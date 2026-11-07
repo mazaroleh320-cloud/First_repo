@@ -1,28 +1,28 @@
-# #First homework exercise
+#First homework exercise
 
-# from datetime import datetime, timedelta
+from datetime import datetime, timedelta
 
 
-# def get_days_from_today(date):
-#     formats_to_try = ["%Y-%m-%d", "%d.%m.%Y", '%d/%m/%Y']
-#     parsed_date = None   
-#     for fmt in formats_to_try:
-#         try:
-#             parsed_date = datetime.strptime(date, fmt).date() #Конвертуємо рядок у дату,та використовуємо назву іншої змінної щоб не плутати з вхідним рядком
-#             break
-#         except (ValueError, TypeError):
-#            continue
+def get_days_from_today(date):
+    formats_to_try = ["%Y-%m-%d", "%d.%m.%Y", '%d/%m/%Y']
+    parsed_date = None   
+    for fmt in formats_to_try:
+        try:
+            parsed_date = datetime.strptime(date, fmt).date() #Конвертуємо рядок у дату,та використовуємо назву іншої змінної щоб не плутати з вхідним рядком
+            break
+        except (ValueError, TypeError):
+           continue
 
-#     if parsed_date is None:
-#         return "Помилка: Невірний формат дати. Будь ласка, використовуйте формат YYYY-MM-DD, DD.MM.YYYY або DD/MM/YYYY."
+    if parsed_date is None:
+        return "Помилка: Невірний формат дати. Будь ласка, використовуйте формат YYYY-MM-DD, DD.MM.YYYY або DD/MM/YYYY."
     
-#     today = datetime.now().date() # Беремо поточну дату (без часу, щоб різниця була цілочисельною)
-#     difference_days = (today - parsed_date).days # Знаходимо різницю в днях
-#     return difference_days
+    today = datetime.now().date() # Беремо поточну дату (без часу, щоб різниця була цілочисельною)
+    difference_days = (today - parsed_date).days # Знаходимо різницю в днях
+    return difference_days
 
-# print(get_days_from_today("14.06.2023"))  # Приклад використання функції
-# print(get_days_from_today("132321321"))  # Поверне текст помилки, якщо вказати будь що інше, крім формату дати
-# print(get_days_from_today("13.14.2000")) # Поверне помилку бо 14 місяць не існує
+print(get_days_from_today("14.06.2023"))  # Приклад використання функції
+print(get_days_from_today("132321321"))  # Поверне текст помилки, якщо вказати будь що інше, крім формату дати
+print(get_days_from_today("13.14.2000")) # Поверне помилку бо 14 місяць не існує
 
 
 
